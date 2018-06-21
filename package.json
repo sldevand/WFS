@@ -5,7 +5,10 @@
   "keywords": [],
   "main": "index.html",
   "scripts": {
-    "babel": "./node_modules/.bin/watchify ./src/index.js -t [babelify] -o ./dist/index.js"
+    "babel": "./node_modules/.bin/watchify ./src/index.js -t [babelify] -o ./dist/index.js",
+    "global": "npm run bsync | npm run scss | npm run babel",
+    "scss": "./node_modules/.bin/node-sass --watch scss/index.scss -o dist",
+    "bsync": "./node_modules/.bin/browser-sync start --server  --files 'dist/*.css' 'index.html'"
   },
   "license": "MIT",
   "devDependencies": {
@@ -13,6 +16,7 @@
     "babel-preset-env": "latest",
     "babel-register": "latest",
     "browser-sync": "latest",
-    "watchify": "latest"
+    "watchify": "latest",
+    "node-sass": "latest"
   }
 }
