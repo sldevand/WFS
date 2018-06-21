@@ -1,0 +1,18 @@
+{
+  "name": "babel-skeleton",
+  "version": "1.0.0",
+  "description": "Babel skeleton for native app",
+  "keywords": [],
+  "main": "index.html",
+  "scripts": {
+    "babel": "./node_modules/.bin/watchify ./src/index.js -t [babelify] -o ./dist/index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "latest",
+    "babel-preset-env": "latest",
+    "babel-register": "latest",
+    "browser-sync": "latest",
+    "watchify": "latest"
+  }
+}
