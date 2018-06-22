@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "index.html",
   "scripts": {
+    "test": "./node_modules/.bin/mocha --require babel-register --recursive test/unit",
     "babel": "./node_modules/.bin/watchify ./src/index.js -t [babelify] -o ./dist/index.js",
     "global": "npm run bsync | npm run scss | npm run babel",
     "scss": "./node_modules/.bin/node-sass --watch scss/index.scss -o dist",
@@ -17,6 +18,9 @@
     "babel-register": "latest",
     "browser-sync": "latest",
     "watchify": "latest",
-    "node-sass": "latest"
+    "node-sass": "latest",
+    "mocha": "latest",
+    "chai": "latest",
+    "sinon": "latest"
   }
 }
