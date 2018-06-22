@@ -9,18 +9,25 @@
     "babel": "./node_modules/.bin/watchify ./src/index.js -t [babelify] -o ./dist/index.js",
     "global": "npm run bsync | npm run scss | npm run babel",
     "scss": "./node_modules/.bin/node-sass --watch scss/index.scss -o dist",
+    "coverage": "./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha --recursive test/unit",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "bsync": "./node_modules/.bin/browser-sync start --server  --files 'dist/*.css' 'index.html'"
   },
   "license": "MIT",
   "devDependencies": {
     "babelify": "latest",
+    "babel-plugin-istanbul": "latest",
     "babel-preset-env": "latest",
     "babel-register": "latest",
     "browser-sync": "latest",
     "watchify": "latest",
     "node-sass": "latest",
     "mocha": "latest",
+    "mocha-lcov-reporter": "latest",
+    "nyc": "latest",
     "chai": "latest",
+    "cross-env": "latest",
+    "coveralls": "latest",
     "sinon": "latest"
   }
 }
